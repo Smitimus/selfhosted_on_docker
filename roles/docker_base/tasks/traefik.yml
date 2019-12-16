@@ -3,7 +3,6 @@
 - name: generate admin passwd for traefik
   set_fact:
     traefik_passwd: "{{ lookup('password', '{{ selfhosted_credential_store }}/traefik_api_password chars=ascii_letters,digits length=32') }}"
-  when: traefik_passwd == ''
   
 - name: install python docker
   pip:
