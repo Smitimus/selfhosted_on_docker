@@ -1,3 +1,20 @@
+> **WARNING**: This is a forked version. Use at your own risk!!!
+
+My setup is on Ubuntu 18 on OpenVZ 7. I had issues with the huge pages service (removed here) and with pip/python/ansible pathing.
+
+My install steps are as follows: 
+```bash
+apt update && apt upgrade -y && apt install curl python-pip ansible -y
+curl -s https://raw.githubusercontent.com/Smitimus/selfhosted_on_docker/master/prepare_ansible.sh | /bin/bash
+git clone https://github.com/Smitimus/selfhosted_on_docker && cd selfhosted_on_docker
+./prepare_os.yml
+python -m pip uninstall pip && apt purge --autoremove python-pip -y && apt install python-pip -y
+nano selfhosted_sites.yml
+./prepare_site.yml
+sudo grep -r '' /opt/selfhosted/secrets`
+```
+I am leaving the rest of the document below untouched for reference. 
+
 # Install Selfhosted Stacks on Docker
 
 The following Apps are implemended:
