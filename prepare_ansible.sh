@@ -20,7 +20,7 @@ prepare_ubuntu() {
 	$SUDO apt install software-properties-common curl git mc vim facter python-minimal python-apt aptitude -y
 	$SUDO [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev libssl-dev make -y
 
-	PYTHON_BIN=/usr/bin/python
+	PYTHON_BIN=/usr/local/bin/python
 	install_pip
 		
 	echo
