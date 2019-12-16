@@ -16,7 +16,7 @@
       - name: frontend
     labels:
       traefik.enable: "true"
-      traefik.frontend.rule: "Host:portainer.{{ server_fqdn }};"
+      traefik.frontend.rule: "Host:portainer.{{ base_domain }};"
       traefik.backend: "portainer"
       traefik.port: "9000"
       com.centurylinklabs.watchtower.enable: "true"
